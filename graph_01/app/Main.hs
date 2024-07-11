@@ -43,8 +43,8 @@ clique :: (Eq n) => Graph n -> Maybe [Node n]
 clique (Graph nodes) =
   -- If length of the largest clique is > 0 then there's a clique!
   -- Otherwise nothing
-  let m = largest (filter isClique (subsequences nodes))
-   in if not (null m)
+  let m = largest $ filter isClique (subsequences nodes)
+   in if not $ null m
         then Just m
         else Nothing
 
